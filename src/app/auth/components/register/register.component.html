@@ -1,4 +1,5 @@
 <div class="auth-page">
+    ====== {{isSubmitting$ | async}} --------------------------------
     <div class="container page">
         <div class="row">
             <div class="col-md-6 offset-md-3 col-sx-12">
@@ -7,21 +8,26 @@
                     <a [routerLink]="['./login']">Have an account ?</a>
                 </p>
                 here will be errors
-
-                <form>
+                <mc-backend-error-messages *ngIf="backendErrors$ | async" [backendErrors]="backendErrors$ | async">
+                </mc-backend-error-messages>
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
                     <fieldset>
                         <fieldset class="form-group">
-                            <input type="text" class="form-control form-control-lg" placeholder="Username">
+                            <input formControlName="username" type="text" class="form-control form-control-lg"
+                                placeholder="Username">
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <input type="text" class="form-control form-control-lg" placeholder="Email">
+                            <input formControlName="email" type="text" class="form-control form-control-lg"
+                                placeholder="Email">
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <input type="password" class="form-control form-control-lg" placeholder="Password">
+                            <input formControlName="password" type="password" class="form-control form-control-lg"
+                                placeholder="Password">
                         </fieldset>
-                        <button class="btn btn-lg btn-primary pull-xs-rigth" type="submit">Sing Up</button>
+                        <button class="btn btn-lg btn-primary pull-xs-rigth" type="submit"
+                            [disabled]="isSubmitting$ | async">Sing Up</button>
                     </fieldset>
                 </form>
             </div>
