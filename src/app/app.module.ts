@@ -10,7 +10,8 @@ import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthModule } from './auth/auth.modeule';
+import { AuthModule } from 'src/app/auth/auth.modeule';
+import { TopBarModule } from 'src/app/shared/topBar/topBar.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { AuthModule } from './auth/auth.modeule';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    TopBarModule,
     HttpClientModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
