@@ -11,7 +11,7 @@ import {
   validationErrorsSelector,
 } from 'src/app/auth/store/selectors';
 import { LoginRequestInterface } from 'src/app/auth/types/loginRequest.interface';
-import { loginAction } from 'src/app/auth/store/actions/login.cation';
+import { loginAction } from 'src/app/auth/store/actions/login.action';
 
 @Component({
   selector: 'mc-login',
