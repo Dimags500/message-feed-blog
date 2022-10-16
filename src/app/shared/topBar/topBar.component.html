@@ -28,6 +28,9 @@
                         &nbsp; {{(currentUser$ | async).username}}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <button (click)="logOut()"> Log Out</button>
+                </li>
             </ng-container>
 
             <ng-container *ngIf="isAnonymouse$ | async">

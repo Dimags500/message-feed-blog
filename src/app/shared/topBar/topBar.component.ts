@@ -25,4 +25,8 @@ export class TopBarComponent implements OnInit {
     this.isAnonymouse$ = this.store.pipe(select(isAnonymousSelector));
     this.currentUser$ = this.store.pipe(select(currentUserSelector));
   }
+
+  logOut() {
+    //need to finish logout reducer & observable
+  }
 }
