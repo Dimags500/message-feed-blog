@@ -14,15 +14,17 @@ import { AuthModule } from 'src/app/auth/auth.modeule';
 import { TopBarModule } from 'src/app/shared/topBar/topBar.module';
 import { PersistanceService } from './shared/services/persistent.service';
 import { AuthInterceptor } from './shared/services/interceptor.service';
+import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthModule,
     TopBarModule,
     HttpClientModule,
+    GlobalFeedModule ,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
