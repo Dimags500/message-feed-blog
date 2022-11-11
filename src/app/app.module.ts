@@ -15,6 +15,7 @@ import { TopBarModule } from 'src/app/shared/topBar/topBar.module';
 import { PersistanceService } from './shared/services/persistent.service';
 import { AuthInterceptor } from './shared/services/interceptor.service';
 import { GlobalFeedModule } from './globalFeed/globalFeed.module';
+import { ErrorMessageComponent } from './shared/modules/errorMessage/components/error-message/error-message.component';
 
 @NgModule({
   declarations: [AppComponent, ],
