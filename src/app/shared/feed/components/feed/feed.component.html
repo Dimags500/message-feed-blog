@@ -1,6 +1,9 @@
 
 
-<mc-loading *ngIf="isLoading$ | async"></mc-loading>
+<div class="loading">
+    <mc-loading *ngIf="isLoading$ | async"></mc-loading>
+
+</div>
 
 <mc-error-message *ngIf="error$ | async" ></mc-error-message>
 
@@ -38,6 +41,6 @@
 
         </div>
     </div>
-    PAGINATION
+    <mc-pagination [total]="(feed$ | async)?.articlesCount" [limit]="limit" [url]="baseUrl"  [currentPage]="currentPage"></mc-pagination>
 
 </div>
