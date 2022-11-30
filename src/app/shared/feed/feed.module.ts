@@ -7,13 +7,16 @@ import { EffectsModule } from '@ngrx/effects';
 import { GetFeedEffect } from './store/effects/getFeed.effect';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reduser';
+import { ErrorMessageModule } from '../modules/errorMessage/errorMessage.module';
+import { LoadingModule } from '../modules/loading/loading.module';
+import { PaginationModule } from '../modules/pagination/pagination.module';
 
 
 
 @NgModule({
   declarations: [FeedComponent],
   imports: [
-    CommonModule ,RouterModule , EffectsModule.forFeature([GetFeedEffect]) , StoreModule.forFeature('feed',reducers)],
+    CommonModule ,RouterModule , EffectsModule.forFeature([GetFeedEffect]) , StoreModule.forFeature('feed',reducers) , ErrorMessageModule , LoadingModule ,PaginationModule],
   providers : [FeedService] ,
   exports : [FeedComponent]
 })
