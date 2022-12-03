@@ -18,35 +18,37 @@ import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 import { ErrorMessageComponent } from './shared/modules/errorMessage/components/error-message/error-message.component';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { YourFeedModule } from './yourFeed/your-feed.module';
+import { TagFeedModule } from './tagFeed/tag-feed.module';
+
 
 @NgModule({
-  declarations: [AppComponent, ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AuthModule,
-    TopBarModule,
-    HttpClientModule,
-    GlobalFeedModule ,
-    YourFeedModule ,
-    StoreModule.forRoot({ router: routerReducer,
-    }),
-    StoreRouterConnectingModule.forRoot(),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: environment.production,
-    }),
-    EffectsModule.forRoot([]),
-    
-  ],
-  providers: [
-    PersistanceService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true,
-    },
-  ],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    providers: [
+        PersistanceService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true,
+        },
+    ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AuthModule,
+        TopBarModule,
+        HttpClientModule,
+        GlobalFeedModule,
+        YourFeedModule,
+        TagFeedModule ,
+        StoreModule.forRoot({ router: routerReducer,
+        }),
+        StoreRouterConnectingModule.forRoot(),
+        StoreDevtoolsModule.instrument({
+            maxAge: 25,
+            logOnly: environment.production,
+        }),
+        EffectsModule.forRoot([])]
+  
 })
 export class AppModule {}

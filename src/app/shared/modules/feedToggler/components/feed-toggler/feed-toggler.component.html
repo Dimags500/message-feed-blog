@@ -7,12 +7,16 @@
     </ul>
 
     <ul class="nav nav-pills outline-active">
-            <a [routerLink]="['/']" class="nav-link" routerLinkActive="active">Global Feed</a>
+            <a [routerLink]="['/']" class="nav-link" 
+            routerLinkActive="active"  [routerLinkActiveOptions]="{exact : true }"
+            >Global Feed</a>
     </ul>
 
     <ul class="nav nav-pills outline-active">
         <li class="nav-item" *ngIf="tagNameProps">
-            <a [routerLink]="['/tags', tagNameProps]" class="nav-link" routerLinkActive="active">#{{tagNameProps}}</a>
+            <a [routerLink]="['/tags', tagNameProps]" class="nav-link" routerLinkActive="active" >
+               # {{tagNameProps}}
+            </a>
         </li>
     </ul>
 </div>
