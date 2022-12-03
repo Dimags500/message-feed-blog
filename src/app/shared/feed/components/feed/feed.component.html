@@ -28,16 +28,16 @@
 
             <div>
                 <a [routerLink]="['/profiles'  , article.slug]" class="preview-link">
-                    <h1>{{article.title}}</h1>
-                    <p>{{article.description}}</p>
-                    <span>Read more ..</span>
-
+                    <h1>{{article.title.substring(0,60)}}</h1>
                 </a>
+                <p>{{article.description}}</p>
+                <span>Read more ..</span>
+                <div>
+                    <mc-tag-list [tags]="article.tagList"></mc-tag-list>
+                </div>
 
             </div>
-            <div>
-                HERE WILL BE LIST OF TAGS 
-            </div>
+           
 
         </div>
     </div>
