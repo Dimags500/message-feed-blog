@@ -30,12 +30,12 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
     StoreModule.forRoot({      router: routerReducer,
     }),
     StoreRouterConnectingModule.forRoot(),
-
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
     EffectsModule.forRoot([]),
+    
   ],
   providers: [
     PersistanceService,

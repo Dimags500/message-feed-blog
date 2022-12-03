@@ -11,6 +11,7 @@ import { ErrorMessageModule } from '../modules/errorMessage/errorMessage.module'
 import { LoadingModule } from '../modules/loading/loading.module';
 import { PaginationModule } from '../modules/pagination/pagination.module';
 import { TagListModule } from '../modules/tagList/taglist.module';
+import { FeedTogglerModule } from '../modules/feedToggler/feed-toggler.module';
 
 
 
@@ -19,7 +20,7 @@ import { TagListModule } from '../modules/tagList/taglist.module';
   imports: [
     CommonModule ,RouterModule , EffectsModule.forFeature([GetFeedEffect]) , 
     StoreModule.forFeature('feed',reducers) , ErrorMessageModule , LoadingModule ,PaginationModule ,
-    TagListModule],
+    TagListModule , FeedTogglerModule],
   providers : [FeedService] ,
   exports : [FeedComponent]
 })
