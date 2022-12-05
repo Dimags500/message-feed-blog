@@ -13,6 +13,7 @@ import {
   loginFailureAction,
   loginSuccessAction,
 } from 'src/app/auth/store/actions/login.action';
+import { logoutAction } from '../actions/logout.action';
 
 @Injectable()
 export class LoginEffect {
@@ -40,6 +41,17 @@ export class LoginEffect {
         );
       })
     )
+  );
+
+  logout$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(logoutAction),
+      tap(() => {
+          this.persistanceService.remove('accessToken');
+          this.router.navigateByUrl('/');
+      })
+    ) ,
+    { dispatch: false }
   );
 
   redirectAfterSubmit$ = createEffect(

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { logoutAction } from 'src/app/auth/store/actions/logout.action';
 
 import {
   currentUserSelector,
@@ -27,6 +28,8 @@ export class TopBarComponent implements OnInit {
   }
 
   logOut() {
+    console.log('logout')
     //need to finish logout reducer & observable
+    this.store.dispatch(logoutAction())
   }
 }

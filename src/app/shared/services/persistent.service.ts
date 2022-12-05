@@ -18,4 +18,14 @@ export class PersistanceService {
       return null;
     }
   }
+
+  
+  remove(key: string): any {
+    try {
+      return localStorage.removeItem(key);
+    } catch (error) {
+      console.error('Error readin from localStorage', error);
+      return null;
+    }
+  }
 }
